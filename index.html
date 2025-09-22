@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta property="og:title" content="t-shirts">
+    <link rel="icon" type="image/ico" href="media/mask.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>t-shirts</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+<header class="header">
+  <div class="container header-flex">
+    <img src="./media/fontbolt (1).png" alt="Иконка игры" height="190px" class="logo">
+     <img src="./media/pumpkin.svg" alt="Иконка игры" height="250px" class="logo">
+
+    <form class="search-form">
+      <input type="text" placeholder="Поиск..." class="search-input">
+      <button type="submit" class="search-btn">Найти</button>
+    </form>
+  </div>
+</header>
+
+<main>
+  <section class="info-section">
+    <div class="info-box">
+      
+      <div id="download-content" class="content-active">
+  <img src="./media/TOP.png" alt="top" class="topz"> 
+  
+      </div> 
+
+      <!-- Первая строка товаров -->
+      <div class="icons-row">
+        <div class="item">
+          <img src="./media/ogurez.png" alt="огурец" class="icons-777">
+          <p class="price">199.99$</p>
+        </div>
+
+        <div class="item">
+          <img src="./media/potato.png" alt="картошка" class="icons-777">
+          <p class="price">199.99$</p>
+        </div>
+
+        <div class="item">
+          <img src="./media/luk.png" alt="лук" class="icons-777">
+          <p class="price">199.99$</p>
+        </div>
+
+        <div class="item">
+          <img src="./media/morkovka.png" alt="морковка" class="icons-777">
+          <p class="price">199.99$</p>
+        </div>
+      </div>
+
+      <div class="divider-line"></div>
+
+      <img src="./media/fontbolt.png" alt="shrift class="pokemon>
+
+      <!-- Вторая строка товаров -->
+      <div class="icons-row">
+        <div class="item">
+          <img src="./media/perchik.png" alt="перчик" class="icons-777">
+          <p class="price">120.99$</p>
+        </div>
+
+        <div class="item">
+          <img src="./media/tikva.png" alt="тыква" class="icons-777">
+          <p class="price">199.99$</p>
+        </div>
+
+        <div class="item">
+          <img src="./media/brokole.png" alt="брокколи" class="icons-777">
+          <p class="price">349.99$</p>
+        </div>
+
+        <div class="item">
+          <img src="./media/rediska.png" alt="редиска" class="icons-777">
+          <p class="price">89.99$</p>
+        </div>
+      </div>
+
+      <div class="divider-line"></div>
+      
+
+      <h1>Есть много компаний, которые занимаются футболками, но одна из них стоит особняком</h1>
+      <p> фирма, где каждое изделие рождается не на конвейере, а в прямом смысле на грядке. Да-да, именно так: их уникальность в том, что все принты создаются из овощей, которые они выращивают сами. Это не просто бизнес, а целая философия. Представь себе: футболка, на которой изображён помидор, редис или баклажан — и ты знаешь, что этот овощ действительно рос на их поле, впитывал солнечный свет и землю. Потом из него делали натуральные краски и переносили на ткань. Фирма совмещает два мира: экологичность и стиль. Здесь нет синтетических красителей, нет случайных картинок, скачанных из интернета. Каждая футболка — живая история. Она пахнет честностью, трудом и уважением к природе. Можно бесконечно спорить о брендах, но в мире, где одежда стала бездушным товаром, именно эта компания доказала: лучший стиль — это когда мода и природа идут рука об руку.</p>
+            <div class="icons-row">
+        <div class="item">
+          <img src="./media/sdfdfsd.png" alt="перчик" class="icons-777">
+          
+        </div>
+
+        <div class="item">
+          <img src="./media/potato-bg.png" alt="тыква" class="icons-777">
+     
+        </div>
+
+        <div class="item">
+          <img src="./media/perchik-bg.png" alt="брокколи" class="icons-777">
+          
+        </div>
+
+        <div class="item">
+          <img src="./media/ogurez-bg.jpg" alt="редиска" class="icons-777">
+        
+        </div>
+      </div>
+            <h1>У наших футболок двухсторонний принт - примеры</h1>
+                 <div class="divider-line"></div>
+    </div>
+
+
+    
+  </section>
+</main>
+
+
+
+<script>
+  function showContent(contentId) {
+    
+    document.querySelectorAll('#download-content, #community-content, #faq-content').forEach(content => {
+      content.classList.remove('content-active');
+      content.classList.add('content-hidden');
+    });
+    
+    
+    const activeContent = document.getElementById(contentId + '-content');
+    if (activeContent) {
+      activeContent.classList.remove('content-hidden');
+      activeContent.classList.add('content-active');
+    }
+  }
+  
+  document.querySelectorAll('.content-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const contentId = this.getAttribute('data-content');
+      showContent(contentId);
+    });
+  });
+  
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', function() {
+      const answer = this.nextElementSibling;
+      const toggle = this.querySelector('.faq-toggle');
+      
+      answer.classList.toggle('active');
+      toggle.classList.toggle('active');
+      
+      if (answer.classList.contains('active')) {
+        toggle.textContent = '−';
+      } else {
+        toggle.textContent = '+';
+      }
+    });
+  });
+</script>
+
+<section class="bottom-section">
+  <div class="thick-bottom-line">
+    <div class="content-wrapper">
+      <img class="icon2" src="./media/galochka.svg" alt="galochka">
+      <div class="text-container">
+        <p class="bottom-text">+777 777 77 77</p>
+        <p class="bottom-text">По обращению качества футболок</p>
+        <p class="bottom-text2">Все права защищены</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script>
+  const form = document.querySelector('.search-form');
+  const input = document.querySelector('.search-input');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const query = input.value.trim().toLowerCase();
+
+    const items = document.querySelectorAll('.item');
+    let found = false;
+
+    items.forEach(item => {
+      const name = item.querySelector('img').alt.toLowerCase();
+
+      item.classList.remove('highlight', 'dimmed');
+
+      if (query !== "") {
+        if (name.includes(query)) {
+          item.classList.add('highlight'); // совпадение — увеличиваем
+          found = true;
+        } else {
+          item.classList.add('dimmed'); // остальные — тусклые
+        }
+      }
+    });
+
+    if (query !== "" && !found) {
+      alert("Ничего не найдено 😢");
+    }
+  });
+</script>
+
+
+</body>
+</html>
